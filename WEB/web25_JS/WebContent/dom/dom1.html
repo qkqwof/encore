@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){//순서가 먼저여도 body부터 동작됌
+		//로직을 작성
+		//1. 노드 생성(태크,내용)
+		var h1 = document.createElement('h1'); //<h1></h1>
+		var text = document.createTextNode('Hello DOM!!');
+		
+		//2. 생성한 노드를 연결...기존의 태그에 연결
+		h1.appendChild(text);
+		document.body.appendChild(h1);
+		
+		//3. 이미지 태그 생성
+		var img = document.createElement('img');
+		img.setAttribute('src','../img/jack.jpg');//속성은 tag에 적용(속성은 추가 x)
+		img.setAttribute('width',300);
+		img.setAttribute('height',350);
+	
+		//body 밑에 붙인다.
+		document.body.appendChild(img);
+	};
+</script>
+</head>
+<body>
+
+</body>
+</html>

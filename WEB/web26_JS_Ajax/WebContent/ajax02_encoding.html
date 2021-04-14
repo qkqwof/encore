@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var xhr;
+	var nickfrm;
+	function startRequest(){
+		xhr = new XMLHttpRequest();
+		
+		nickfrm = document.frm.nick;
+		
+		xhr.onreadystatechange = callback;
+		
+		xhr.open("get","EncoreServlet?nickname="+encodeURL(nickfrm.value));
+		
+		xhr.send(null);
+	}
+	function callback(){
+	
+	}
+</script>
+</head>
+<body>
+<h2>JavaScript Get방식에서 한글 처리하기</h2>
+<form name="frm">
+닉네임 <input type = "text" name="nick">
+<input type = "button" value="닉네임보내기" onclick="startRequest()">
+<div id="resultView"></div>
+</form>
+</body>
+</html>

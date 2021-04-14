@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bind :: 여러개의 이벤트를 묶어주는 기능 :: mouseenter + mouseleave</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+    	$('h2').bind({
+    		mouseenter: function(){//마우스가 특정 영역 안으로 진입했을 때...
+    			$(this).addClass('reverse');
+    		}, 
+    		mouseleave: function(){//마우스가 특정 영역 밖으로 빠져나왔을 때...
+    			$(this).removeClass('reverse');
+    		}
+    		
+    	});
+	});
+	//bind의 mouseenter, mouseleave 기본적으로 동시에 가지고 있는게 -> hover
+</script>
+<style type="text/css">
+	.reverse{background: blue; color: white;}
+</style>
+</head>
+<body>
+	<h2>jQuery doesn't officially support SVG. Using jQuery methods on SVG documents, unless explicitly documented for that method, might cause unexpected behaviors.1</h2>
+	<h2>jQuery doesn't officially support SVG. Using jQuery methods on SVG documents, unless explicitly documented for that method, might cause unexpected behaviors.2</h2>
+	<h2>jQuery doesn't officially support SVG. Using jQuery methods on SVG documents, unless explicitly documented for that method, might cause unexpected behaviors.3</h2>
+</body>
+</html>
